@@ -14,6 +14,6 @@ Backend for __[Job Application Tracker App](https://github.com/karantyagi/job-ap
 
 ### Create `admin`
 In mongo shell,
-1. Run `use job-application-db`
+1. Run `use job-applications-db`
 2. `db.createCollection('User')`
 3. `db.User.insert({username:'admin',password:'admin',role:'Admin'})`
