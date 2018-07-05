@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/karantyagi/job-applications-server/issues"
   },
-  "homepage": "https://github.com/karantyagi/job-applications-server#readme"
+  "homepage": "https://github.com/karantyagi/job-applications-server#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
