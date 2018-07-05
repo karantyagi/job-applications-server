@@ -10,13 +10,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // require mongoose
-var connectionString = 'mongodb://127.0.0.1:27017/job-application-manager'; // for local
-if(process.env.MLAB_USERNAME) { // check if running remotely
-    var username = process.env.MLAB_USERNAME; // get from environment
-    var password = process.env.MLAB_PASSWORD;
-    connectionString = 'mongodb://' + username + ':' + password;
-    connectionString += '@ds115931.mlab.com:15931/heroku_xb8r295c'; // user yours
-}
+var connectionString = 'mongodb://127.0.0.1:27017/job-applications-db'; // for local
+// if(process.env.MLAB_USERNAME) { // check if running remotely
+//     var username = process.env.MLAB_USERNAME; // get from environment
+//     var password = process.env.MLAB_PASSWORD;
+//     connectionString = 'mongodb://' + username + ':' + password;
+//     connectionString += '@ds115931.mlab.com:15931/heroku_xb8r295c'; // use yours
+// }
 
 var mongoose = require('mongoose');
 mongoose.connect(connectionString).then();
