@@ -1,0 +1,19 @@
+{
+  "name": "job-applications-server",
+  "version": "1.0.0",
+  "description": "Server for Job Application Manager",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karantyagi/job-applications-server.git"
+  },
+  "author": "Karan Tyagi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karantyagi/job-applications-server/issues"
+  },
+  "homepage": "https://github.com/karantyagi/job-applications-server#readme"
+}
