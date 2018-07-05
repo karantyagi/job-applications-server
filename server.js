@@ -39,8 +39,8 @@ app.use(function(req, res, next) {
 });
 
 
-// var userService = require('./services/user.service.server');
-// userService(app);
+var userService = require('./services/user.service.server');
+userService(app);
 
 
 app.listen(process.env.PORT || 5500, function(){
