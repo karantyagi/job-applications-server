@@ -1,4 +1,8 @@
-console.log('Server is now running.');
+if( process.env.PORT === undefined) {
+    console.log('Server is running locally, using local mongoDB database.');
+} else {
+    console.log('Server (deployed on Heroku) is running (as a heroku app), using Mlab MongoDB database.');
+}
 
 // require express
 var express = require('express')
@@ -8,6 +12,14 @@ var app = express();
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
+// For heroku configuration, create envt variables:
+// PORT : 5510
+// MLAB_USERNAME :
+// MLAB_PASSWORD :
+
+// console.log('check ...', process.env.MLAB_USERNAME);
+// console.log('check port...', process.env.PORT);
 
 // require mongoose
 var connectionString = 'mongodb://127.0.0.1:27017/job-applications-db'; // for local
