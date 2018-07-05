@@ -2,12 +2,6 @@
 
 Backend for __[Job Application Tracker App](https://github.com/karantyagi/job-application-tracker)__
 
-## REST API endpoints
-
-> 
-
->
-
 ## How to run locally?
 
 ## `Server`
