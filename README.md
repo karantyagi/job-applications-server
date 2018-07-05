@@ -17,3 +17,4 @@ In mongo shell,
 1. Run `use job-applications-db`
 2. `db.createCollection('User')`
 3. `db.User.insert({username:'admin',password:'admin',role:'Admin'})`
+4. `db.User.insert({username:'user1',password:'user1',role:'Applicant'})`
