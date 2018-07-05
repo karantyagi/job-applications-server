@@ -1,6 +1,6 @@
-# `Job Application Manager Server`
+# `'Job Application Tracker' Server`
 
-Backend for [Job Application Manager App]()
+Backend for __[Job Application Tracker App](https://github.com/karantyagi/job-application-tracker)__
 
 ## How to run locally?
 
@@ -14,6 +14,6 @@ Backend for [Job Application Manager App]()
 
 ### Create `admin`
 In mongo shell,
-1. Run `use job-portal`
+1. Run `use job-application-db`
 2. `db.createCollection('User')`
 3. `db.User.insert({username:'admin',password:'admin',role:'Admin'})`
