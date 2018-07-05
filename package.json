@@ -18,6 +18,7 @@
   "homepage": "https://github.com/karantyagi/job-applications-server#readme",
   "dependencies": {
     "express": "^4.16.3",
-    "express-session": "^1.15.6"
+    "express-session": "^1.15.6",
+    "mongoose": "^5.2.1"
   }
 }
