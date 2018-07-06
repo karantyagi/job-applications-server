@@ -6,7 +6,7 @@ var applicationModel = mongoose
     .model('ApplicationModel', applicationSchema);
 
 module.exports = {
-    findApplicationById: findApplicationById,
+    findApplicationByUserId: findApplicationByUserId,
     findAllApplications:findAllApplications,
     createApplication: createApplication,
     deleteApplication: deleteApplication,
@@ -14,29 +14,26 @@ module.exports = {
 };
 
 function findAllApplications() {
-    return ApplicationModel.find();
+    return applicationModel.find();
 }
 
 
-function findApplicationById(ApplicationId) {
-    return ApplicationModel.findById(ApplicationId,{password:0});
+function findApplicationByUserId(userId) {
+    return applicationModel.find({user: userId});
 }
 
-function createApplication(Application) {
-    console.log(Application);
-    if (Application.role === 'Recruiter') {
-        Application['requestStatus']='Pending'
-    }
-    return ApplicationModel.create(Application);
+function createApplication(application) {
+    console.log(application);
+    return applicationModel.create(application);
 }
 
-function deleteApplication(ApplicationId) {
-    return ApplicationModel.remove({_id: ApplicationId});
+function deleteApplication(applicationId) {
+    return applicationModel.remove({_id: applicationId});
 }
 
-function updateApplication(ApplicationId, newApplication) {
-    console.log(ApplicationId);
+function updateApplication(applicationId, newApplication) {
+    console.log(applicationId);
     console.log(newApplication);
-    return ApplicationModel.update({_id: ApplicationId},
+    return applicationModel.update({_id: applicationId},
         {$set: newApplication})
 }
