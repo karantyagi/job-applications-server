@@ -51,9 +51,16 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.get('/', function (req, res) {
+    res.send('node.js server for Job Application Tracker App');
+})
+
 
 var userService = require('./services/user.service.server');
 userService(app);
+
+var applicationService = require('./services/application.service.server');
+applicationService(app);
 
 
 app.listen(process.env.PORT || 5500, function(){
