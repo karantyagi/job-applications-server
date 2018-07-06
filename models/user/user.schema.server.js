@@ -5,7 +5,14 @@ var userSchema = mongoose.Schema({
     firstName: String,
     lastName: String,
     email: String,
-    role: String // role : Admin, Applicant
+    // role : Admin, Applicant
+    role : {
+        type: [{
+            type: String,
+            enum: ['Admin', 'Applicant']
+        }],
+        default: ['Applicant']
+    }
 }, {collection: 'User'});
 
 module.exports = userSchema;
