@@ -91,29 +91,41 @@ module.exports = function (app) {
 
     function register(req, res) {
         var user = req.body;
-        var username = user.username;
-        userModel.findUserByUsername(username).then(function (u) {
-            console.log(u);
-            if (u != null) {
-                res.json({status: false});
-            } else {
-                userModel.createUser(user).then(function (user) {
-                    user.password = '';
-                    if (user.role != 'Recruiter') {
-                        req.session['user'] = user;
-                        res.json({status: true});
-                    } else {
-                        recruiterModel.createRecruiterDetail({user: user._id}).then(() => {
-                                res.json({status: true});
-                            }
-                        )
-                    }
-
-                })
-            }
-        })
-
+        userModel.registerUser(user)
+            .then(function (user) {
+                console.log(user);
+                res.json(user);
+            })
     }
+
+
+    // ORIGINAL REGISTER FUNCTION
+
+    // function register(req, res) {
+    //     var user = req.body;
+    //     var username = user.username;
+    //     userModel.findUserByUsername(username).then(function (u) {
+    //         console.log(u);
+    //         if (u != null) {
+    //             res.json({status: false});
+    //         } else {
+    //             userModel.createUser(user).then(function (user) {
+    //                 user.password = '';
+    //                 if (user.role != 'Recruiter') {
+    //                     req.session['user'] = user;
+    //                     res.json({status: true});
+    //                 } else {
+    //                     recruiterModel.createRecruiterDetail({user: user._id}).then(() => {
+    //                             res.json({status: true});
+    //                         }
+    //                     )
+    //                 }
+    //
+    //             })
+    //         }
+    //     })
+    //
+    // }
 
     function getProfile(req, res) {
         if (req.session && req.session['user']) {

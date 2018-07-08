@@ -12,7 +12,8 @@ module.exports = {
     findUserByCredentials: findUserByCredentials,
     createUser: createUser,
     deleteUser: deleteUser,
-    updateUser: updateUser
+    updateUser: updateUser,
+    registerUser : registerUser
 };
 
 function findAllUsers() {
@@ -40,6 +41,12 @@ function createUser(user) {
         user['requestStatus']='Pending'
     }
     return userModel.create(user);
+}
+
+function registerUser(user) {
+    console.log("Registering new user\n", user);
+    // userModel.create(user);
+    return userModel.create(user)
 }
 
 function deleteUser(userId) {

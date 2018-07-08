@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var applicationSchema = mongoose.Schema({
     company : String,
     position : String, // Job Title
+    followUp : String,
     duration : Number, // in Weeks or months (are decimal allowed)
     durationUnit : {
         type: [{
